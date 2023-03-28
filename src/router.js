@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './pages/HomePage.vue';
-// import NotFound from './pages/NotFound.vue';
+import AboutUs from './pages/AboutUs.vue';
+import NotFound from './pages/NotFound.vue';
 // import ThankYou from './pages/ThankYou.vue';
 // import Contacts from './pages/Contacts.vue';
 const router = createRouter({
@@ -8,8 +9,13 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            name: 'HomePage',
+            name: 'homepage',
             component: HomePage,
+        },
+        {
+            path: '/About-Us',
+            name: 'about_us',
+            component: AboutUs,
         },
         // {
         //     path: '/Contatti',
@@ -21,11 +27,11 @@ const router = createRouter({
         //     name: 'ThankYou',
         //     component: ThankYou
         // },
-        // {
-        //     path: '/*',
-        //     name: 'NotFound',
-        //     component: NotFound
-        // },
+        {
+            path: '/*',
+            name: 'NotFound',
+            component: NotFound
+        },
 
     ]
 });
