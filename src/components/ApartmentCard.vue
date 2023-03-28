@@ -26,7 +26,7 @@ export default{
                 <em> 
                     <strong>Optionals: </strong> 
                     <span v-if="apartment.optionals.length > 0">
-                        <span class="badge bg-primary mx-1" v-for="optional in apartment.optionals" :key="optional.id">{{ optional.title }}</span>
+                        <span class="badge bg-primary mx-1" v-for="optional in apartment.optionals" :key="optional.id">{{ optional.name }}</span>
                     </span>
                     <span v-else>
                         No optionals
