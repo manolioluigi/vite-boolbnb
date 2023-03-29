@@ -40,12 +40,12 @@ export default{
                                 </router-link>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Login
+                                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">User</a></li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="http://127.0.0.1:8003/login">Login</a></li>
+                                    <li><a class="dropdown-item" href="http://127.0.0.1:8003/register">Register</a></li>
                                 </ul>
                             </li>
                         </ul>
