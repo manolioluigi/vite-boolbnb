@@ -29,7 +29,6 @@
                     }else{
                         alert('La chiamata non è andata a buon fine')
                     }
-                    
                 });
             }
         },
