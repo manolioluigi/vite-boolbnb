@@ -2,11 +2,13 @@
     import axios from 'axios';
     import {store} from '../store.js';
     import ApartmentCard from '../components/ApartmentCard.vue';
+    import Jumbotron from '../components/Jumbotron.vue';
 
     export default {
         name: 'HomePage',
         components:{
             ApartmentCard,
+            Jumbotron
         },
         data(){
             return{
@@ -39,6 +41,9 @@
 </script>
 
 <template>
+    <div>
+        <Jumbotron :jumbotron="jumbotron"></Jumbotron>
+    </div>
     <div class="container">
         <div class="row">
             <div>

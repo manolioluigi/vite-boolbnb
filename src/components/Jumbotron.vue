@@ -1,7 +1,9 @@
 <script>
-
 export default {
-   
+    name: "Jumbotron",
+    props:{
+        jumbotron: Object,
+    },
 }
 </script>
 
@@ -60,18 +62,18 @@ export default {
     margin: 0 auto;
     height: 400px;
     position: relative;
-    z-index: 0;
+    z-index: 1;
 
     .jumbo-title{
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: 80px;
         left: 540px;
     }
 
     .ciccio{
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         top: 200px;
         left: 130px;
     }
