@@ -28,13 +28,12 @@ export default {
                 room_n: this.room_n,
                 optionals: this.optionals,
             }
-            axios.post(`${this.store.baseUrl}/api/search`, data).then((response) => {
+            axios.post(`${this.store.baseUrl}/guest/search`, data).then((response) => {
                         this.address = '';
                         this.distance = '';
                         this.bed_n = '';
                         this.room_n = '';
                         this.optionals = '';
-                        this.apartments = response.data;
             }).catch(error => {
                 console.log('Errore')
                 // pagina 404
@@ -70,7 +69,7 @@ export default {
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <form action="GET">
+                            <form action="POST">
                                 
                                 <div>
                                     <h4 class="mb-3">Search your appartament</h4>
@@ -162,7 +161,7 @@ export default {
 
 
                                 </div>
-                                <button type="submit" @click="this.submitData">Search</button>
+                                <button type="button" @click="this.submitData">Search</button>
                             </form>
                         </div>
                     </div>
