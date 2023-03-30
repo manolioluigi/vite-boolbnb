@@ -34,7 +34,7 @@ export default{
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://127.0.0.1:8000/" role="button" aria-expanded="false">
+                                <a class="nav-link" href="http://127.0.0.1:8000/dashboard" role="button" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                                 </a>
                             </li>
