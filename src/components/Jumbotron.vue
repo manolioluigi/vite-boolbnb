@@ -52,7 +52,7 @@ export default {
     <div class="container-jumbo">
         <div class="jumbo-title">
             <div class="col d-flex align-items-center">
-                <div class="ciccio">
+                <div class="offcanvas-container">
                     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                         <button class="btn-boolBnB">
                             <img src="../../public/img/airbnb.svg" alt="logo" height="35" width="35">
@@ -130,7 +130,7 @@ export default {
                                         <!-- <input type="range" value="0">
                                         <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> -->
                                     </div>
-                                    <div>
+                                    <div class="mt-4">
                                         <h5>Options</h5>
                                             <label class="container">garden
                                             <input type="checkbox" v-model="filterData.optionals" checked="checked" value="Garden">
@@ -193,6 +193,8 @@ export default {
 
 <style lang="scss">
 
+// JUMBOTRON
+
 .container-jumbo{
     width: 100%;
     margin: 0 auto;
@@ -207,428 +209,294 @@ export default {
         left: 540px;
     }
 
-    .ciccio{
+    .offcanvas-container{
         position: absolute;
         z-index: 2;
         top: 200px;
         left: 130px;
 
 
-//         html {
-// 	height: 100%;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	font-family: 'Work Sans', sans-serif;
-// 	text-align: center;
-// 	h1, h2, h3, h4, h5, h6 {
-// 		margin: 0;
-// 	}
-// 	h1 {
-// 		color: #333;
-// 		font-weight: 500;
-// 	}
-// 	h3 {
-// 		color: #aaa;
-// 		font-weight: 500;
-// 	}
-// 	h4 {
-// 		color: #999;
-// 		font-weight: 500;
-// 		&:after {
-// 			content: "%";
-// 			padding-left: 1px;
-// 		}
-// 	}
-// 	// now for the good stuff 🎉
-// 	input[type="range"] {
-// 		outline: 0;
-// 		border: 0;
-// 		border-radius: 500px;
-// 		width: 400px;
-// 		max-width: 100%;
-// 		margin: 24px 0 16px;
-// 		transition: box-shadow 0.2s ease-in-out;
-// 		// Chrome
-// 		@media screen and (-webkit-min-device-pixel-ratio:0) {
-// 			& {
-// 				overflow: hidden;
-// 				height: 40px;
-// 				-webkit-appearance: none;
-// 				background-color: #ddd;
-// 			}
-// 			&::-webkit-slider-runnable-track {
-// 				height: 40px;
-// 				-webkit-appearance: none;
-// 				color: #444;
-// 				// margin-top: -1px;
-// 				transition: box-shadow 0.2s ease-in-out;
-// 			}
-// 			&::-webkit-slider-thumb {
-// 				width: 40px;
-// 				-webkit-appearance: none;
-// 				height: 40px;
-// 				cursor: ew-resize;
-// 				background: #fff;
-// 				box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 40px #1597ff;
-// 				border-radius: 50%;
-// 				transition: box-shadow 0.2s ease-in-out;
-// 				position: relative;
-// 				// top: 1px;
-// 			}
-// 			&:active::-webkit-slider-thumb {
-// 				background: #fff;
-// 				box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
-// 			}
-// 		}
-// 		// Firefox
-// 		&::-moz-range-progress {
-// 			background-color: #43e5f7; 
-// 		}
-// 		&::-moz-range-track {  
-// 			background-color: #9a905d;
-// 		}
-// 		// IE
-// 		&::-ms-fill-lower {
-// 			background-color: #43e5f7; 
-// 		}
-// 		&::-ms-fill-upper {  
-// 			background-color: #9a905d;
-// 		}
-// 	}
-// }
-// #h4-container {
-// 	width: 400px;
-// 	max-width: 100%;
-// 	padding: 0 20px;
-// 	box-sizing: border-box;
-// 	position: relative;
-// 	#h4-subcontainer {
-// 		width: 100%;
-// 		position: relative;
-// 		h4 {
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: center;
-// 			position: absolute;
-// 			top: 0;
-// 			width: 40px;
-// 			height: 40px;
-// 			color: #fff !important;
-// 			font-size: 12px;
-// 			transform-origin: center -10px;
-// 			transform: translateX(-50%);
-// 			transition: margin-top 0.15s ease-in-out,
-// 				opacity 0.15s ease-in-out;
-// 			span {
-// 				position: absolute;
-// 				width: 100%;
-// 				height: 100%;
-// 				top: 0;
-// 				left: 0;
-// 				background-color: #1597ff;
-// 				border-radius: 0 50% 50% 50%;
-// 				transform: rotate(45deg);
-// 				z-index: -1;
-// 			}
-// 		}
-// 	}
-// }
-// input:not(:active) + #h4-container h4 {
-// 	opacity: 0;
-// 	margin-top: -50px;
-// 	pointer-events: none;
-// }
 
 
+        // OPTIONALS
 
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+        .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
 
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+        /* Hide the browser's default checkbox */
+        .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        }
 
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
+        /* Create a custom checkbox */
+        .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
+        /* On mouse-over, add a grey background color */
+        .container:hover input ~ .checkmark {
+        background-color: #ccc;
+        }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
+        /* When the checkbox is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+        }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
+        /* Show the checkmark when checked */
+        .container input:checked ~ .checkmark:after {
+        display: block;
+        }
 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-
-
+        /* Style the checkmark/indicator */
+        .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        }
 
 
+        // DISTANCE
 
 
-
-
-
-$number-of-options: 5;
-html, body {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: 'Nunito', sans-serif;
-	color: #000;
-	user-select: none;
-}
-#form-wrapper {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-form {
-	width: 90%;
-	max-width: 500px;
-	#form-title {
-		margin-top: 0;
-		font-weight: 400;
-		text-align: center;
-	}
-	#debt-amount-slider {
-		display: flex;
-		flex-direction: row;
-		align-content: stretch;
-		position: relative;
-		width: 100%;
-		height: 50px;
-		user-select: none;
-		&::before {
-			content: " ";
-			position: absolute;
-			height: 2px;
-			width: 100%;
-			width: calc(100% * (#{$number-of-options - 1} / #{$number-of-options}));
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background: #000;
-		}
-		input, label {
-			box-sizing: border-box;
-			flex: 1;
-			user-select: none;
-			cursor: pointer;
-		}
-		label {
-			display: inline-block;
-			position: relative;
-			width: 20%;
-			height: 100%;
-			user-select: none;
-			&::before {
-				content: attr(data-debt-amount);
-				position: absolute;
-				left: 50%;
-				padding-top: 10px;
-				transform: translate(-50%, 45px);
-				font-size: 14px;
-				letter-spacing: 0.4px;
-				font-weight: 400;
-				white-space: nowrap;
-				opacity: 0.85;
-				transition: all 0.15s ease-in-out;
-			}
-			&::after {
-				content: " ";
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				width: 30px;
-				height: 30px;
-				border: 2px solid #000;
-				background: #fff;
-				border-radius: 50%;
-				pointer-events: none;
-				user-select: none;
-				z-index: 1;
-				cursor: pointer;
-				transition: all 0.15s ease-in-out;
-			}
-			&:hover::after {
-				transform: translate(-50%, -50%) scale(1.25);
-			}
-		}
-		input {
-			display: none;
-			&:checked {
-				+ label::before {
-					font-weight: 800;
-					opacity: 1;
-				}
-				+ label::after {
-					border-width: 4px;
-					transform: translate(-50%, -50%) scale(0.75);
-				}
-				~ #debt-amount-pos {
-					opacity: 1;
-				}
-				@for $i from 1 through $number-of-options {
-					&:nth-child(#{$i * 2 - 1}) ~ #debt-amount-pos {
-						left: #{($i * 20%) - 10%};
-					}
-				}
-			}
-		}
-		#debt-amount-pos {
-			display: block;
-			position: absolute;
-			top: 50%;
-			width: 12px;
-			height: 12px;
-			background: #000;
-			border-radius: 50%;
-			transition: all 0.15s ease-in-out;
-			transform: translate(-50%, -50%);
-			border: 2px solid #fff;
-			opacity: 0;
-			z-index: 2;
-		}
-	}
-	&:valid {
-		#debt-amount-slider {
-			input {
-				+ label::before {
-					transform: translate(-50%, 45px) scale(0.9);
-					transition: all 0.15s linear;
-				}
-				&:checked + label::before {
-					transform: translate(-50%, 45px) scale(1.1);
-					transition: all 0.15s linear;
-				}
-			}
-		}
-	}
-	& + button {
-		display: block;
-		position: relative;
-		margin: 56px auto 0;
-		padding: 10px 20px;
-		appearance: none;
-		transition: all 0.15s ease-in-out;
-		font-family: inherit;
-		font-size: 24px;
-		font-weight: 600;
-		background: #fff;
-		border: 2px solid #000;
-		border-radius: 8px;
-		outline: 0;
-		user-select: none;
-		cursor: pointer;
-		&:hover {
-			// transform: scale(1.1);
-			background: #000;
-			color: #fff;
-			&:active {
-				transform: scale(0.9);
-			}
-		}
-		&:focus {
-			background: #4caf50;
-			border-color: #4caf50;
-			color: #fff;
-			pointer-events: none;
-			&::before {
-				animation: spin 1s linear infinite;
-			}
-		}
-		&::before {
-			display: inline-block;
-			width: 0;
-			opacity: 0;
-			content: "\f3f4";
-			font-family: "Font Awesome 5 Pro";
-			font-weight: 900;
-			margin-right: 0;
-			transform: rotate(0deg);
-		}
-	}
-	&:invalid + button {
-		pointer-events: none;
-		opacity: 0.25;
-	}
-}
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
-		width: 24px;
-		opacity: 1;
-		margin-right: 12px;
-	}
-	to {
-		transform: rotate(360deg);
-		width: 24px;
-		opacity: 1;
-		margin-right: 12px;
-	}
-}
-
-
-
-
-
-
-      
+        $number-of-options: 5;
+        html, body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nunito', sans-serif;
+            color: #000;
+            user-select: none;
+        }
+        #form-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form {
+            width: 90%;
+            max-width: 500px;
+            #form-title {
+                margin-top: 0;
+                font-weight: 400;
+                text-align: center;
+            }
+            #debt-amount-slider {
+                display: flex;
+                flex-direction: row;
+                align-content: stretch;
+                position: relative;
+                width: 100%;
+                height: 50px;
+                user-select: none;
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    width: calc(100% * (#{$number-of-options - 1} / #{$number-of-options}));
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: #000;
+                }
+                input, label {
+                    box-sizing: border-box;
+                    flex: 1;
+                    user-select: none;
+                    cursor: pointer;
+                }
+                label {
+                    display: inline-block;
+                    position: relative;
+                    width: 20%;
+                    height: 100%;
+                    user-select: none;
+                    &::before {
+                        content: attr(data-debt-amount);
+                        position: absolute;
+                        left: 50%;
+                        padding-top: 10px;
+                        transform: translate(-50%, 45px);
+                        font-size: 14px;
+                        letter-spacing: 0.4px;
+                        font-weight: 400;
+                        white-space: nowrap;
+                        opacity: 0.85;
+                        transition: all 0.15s ease-in-out;
+                    }
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 30px;
+                        height: 30px;
+                        border: 2px solid #000;
+                        background: #fff;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        user-select: none;
+                        z-index: 1;
+                        cursor: pointer;
+                        transition: all 0.15s ease-in-out;
+                    }
+                    &:hover::after {
+                        transform: translate(-50%, -50%) scale(1.25);
+                    }
+                }
+                input {
+                    display: none;
+                    &:checked {
+                        + label::before {
+                            font-weight: 800;
+                            opacity: 1;
+                        }
+                        + label::after {
+                            border-width: 4px;
+                            transform: translate(-50%, -50%) scale(0.75);
+                        }
+                        ~ #debt-amount-pos {
+                            opacity: 1;
+                        }
+                        @for $i from 1 through $number-of-options {
+                            &:nth-child(#{$i * 2 - 1}) ~ #debt-amount-pos {
+                                left: #{($i * 20%) - 10%};
+                            }
+                        }
+                    }
+                }
+                #debt-amount-pos {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    width: 12px;
+                    height: 12px;
+                    background: #000;
+                    border-radius: 50%;
+                    transition: all 0.15s ease-in-out;
+                    transform: translate(-50%, -50%);
+                    border: 2px solid #fff;
+                    opacity: 0;
+                    z-index: 2;
+                }
+            }
+            &:valid {
+                #debt-amount-slider {
+                    input {
+                        + label::before {
+                            transform: translate(-50%, 45px) scale(0.9);
+                            transition: all 0.15s linear;
+                        }
+                        &:checked + label::before {
+                            transform: translate(-50%, 45px) scale(1.1);
+                            transition: all 0.15s linear;
+                        }
+                    }
+                }
+            }
+            & + button {
+                display: block;
+                position: relative;
+                margin: 56px auto 0;
+                padding: 10px 20px;
+                appearance: none;
+                transition: all 0.15s ease-in-out;
+                font-family: inherit;
+                font-size: 24px;
+                font-weight: 600;
+                background: #fff;
+                border: 2px solid #000;
+                border-radius: 8px;
+                outline: 0;
+                user-select: none;
+                cursor: pointer;
+                &:hover {
+                    // transform: scale(1.1);
+                    background: #000;
+                    color: #fff;
+                    &:active {
+                        transform: scale(0.9);
+                    }
+                }
+                &:focus {
+                    background: #4caf50;
+                    border-color: #4caf50;
+                    color: #fff;
+                    pointer-events: none;
+                    &::before {
+                        animation: spin 1s linear infinite;
+                    }
+                }
+                &::before {
+                    display: inline-block;
+                    width: 0;
+                    opacity: 0;
+                    content: "\f3f4";
+                    font-family: "Font Awesome 5 Pro";
+                    font-weight: 900;
+                    margin-right: 0;
+                    transform: rotate(0deg);
+                }
+            }
+            &:invalid + button {
+                pointer-events: none;
+                opacity: 0.25;
+            }
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+                width: 24px;
+                opacity: 1;
+                margin-right: 12px;
+            }
+            to {
+                transform: rotate(360deg);
+                width: 24px;
+                opacity: 1;
+                margin-right: 12px;
+            }
+        }      
     }
+
+    // OFFCANVAS
 
     .container-input {
         position: relative;
@@ -655,6 +523,10 @@ form {
         opacity: 1;
         width: 360px;
     }
+
+
+    // WAVES
+
 
     #footer-navmenu .wave-animation{
         -webkit-transform:rotate(180deg);
@@ -747,10 +619,6 @@ form {
     .fa-sliders{
         margin-right: 10px;
     }
-
-
-
-
   
 }
 </style>
