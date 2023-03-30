@@ -70,7 +70,8 @@ export default {
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <div>
+                            <form action="GET">
+                                
                                 <div>
                                     <h4 class="mb-3">Search your appartament</h4>
                                     <div class="container-input mb-3">
@@ -161,8 +162,8 @@ export default {
 
 
                                 </div>
-                            </div>
-                            <button type="submit">Search</button>
+                                <button type="submit" @click="this.submitData">Search</button>
+                            </form>
                         </div>
                     </div>
                 </div>
