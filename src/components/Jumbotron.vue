@@ -50,6 +50,14 @@ export default {
     <div class="container-jumbo">
         <div class="jumbo-title">
             <div class="col d-flex align-items-center">
+            </div>
+            <div class="col d-flex justify-content-center align-items-center flex-column text-center">
+                <div>
+                    <img src="../../public/img/logo.png" width="400" alt="logo">
+                </div>
+                <div class="my-3">
+                    <h3>Travel with emotion & experience</h3>
+                </div>
                 <div class="offcanvas-container">
                     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                         <button class="btn-boolBnB">
@@ -67,10 +75,10 @@ export default {
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-
+    
                             <form @submit.prevent="submitData">
                                 
-
+    
                                 <div>
                                     <h4 class="mb-3">Search your appartament</h4>
                                     <div class="container-input mb-3">
@@ -127,7 +135,7 @@ export default {
                                             </form>
                                         </div>
                                     </div>
-
+    
                                     <div>
                                         <h5>Optionals</h5>
                                         <label class="container-check">Garden
@@ -162,14 +170,6 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center align-items-center flex-column text-center">
-                <div>
-                    <img src="../../public/img/logo.png" width="400" alt="logo">
-                </div>
-                <div>
-                    <h3>Travel with emotion & experience</h3>
-                </div>
-            </div>
         </div>
         <div id='footer-navmenu'>
             <svg class='wave-animation' preserveAspectRatio='none' viewBox='0 24 150 28' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -198,18 +198,14 @@ export default {
     z-index: 1;
 
     .jumbo-title{
+        width: 100%;
         position: absolute;
         z-index: 2;
         top: 80px;
-        left: 540px;
     }
 
     .offcanvas-container{
-        position: absolute;
         z-index: 2;
-        top: 200px;
-        left: 130px;
-
         // OPTIONALS
 
         .container-check {
