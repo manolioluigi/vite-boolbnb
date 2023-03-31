@@ -162,9 +162,9 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col d-flex align-items-center flex-column text-center">
+            <div class="col d-flex justify-content-center align-items-center flex-column text-center">
                 <div>
-                    <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c513.png" width="400" alt="logo">
+                    <img src="../../public/img/logo.png" width="400" alt="logo">
                 </div>
                 <div>
                     <h3>Travel with emotion & experience</h3>
