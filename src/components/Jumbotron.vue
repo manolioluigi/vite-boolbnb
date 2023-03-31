@@ -112,13 +112,13 @@ export default {
                                         <div id="form-wrapper">
                                             <form action="/p/quote.php" method="GET">
                                                 <div id="debt-amount-slider">
-                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="1" value="5" required>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="1" value="5000" required>
                                                     <label for="1" data-debt-amount="5km"></label>
-                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="2" value="10" required>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="2" value="10000" required>
                                                     <label for="2" data-debt-amount="10km"></label>
-                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="3" value="20" required>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="3" value="20000" required>
                                                     <label for="3" data-debt-amount="20km"></label>
-                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="4" value="30" required>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="4" value="30000" required>
                                                     <label for="4" data-debt-amount="30km"></label>
                                                     <input type="radio" v-model="filterData.distance" name="debt-amount" id="5" value="40000" required>
                                                     <label for="5" data-debt-amount="40km"></label>
