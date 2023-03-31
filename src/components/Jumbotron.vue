@@ -135,7 +135,7 @@ export default {
                                     </div>
 
                                     <div>
-                                        <h5>Optionals</h5>
+                                        <h5>Optionals.</h5>
                                         <label class="container-check">Garden
                                             <input type="checkbox" v-model="filterData.optionals" checked="checked" value="Garden">
                                             <span class="checkmark"></span>
