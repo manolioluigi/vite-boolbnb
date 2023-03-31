@@ -51,7 +51,7 @@ export default {
         <div class="jumbo-title">
             <div class="col d-flex align-items-center">
             </div>
-            <div class="col d-flex justify-content-center align-items-center flex-column text-center">
+            <div class="col d-flex justify-content-center align-items-center flex-column">
                 <div>
                     <img src="../../public/img/logo.png" width="400" alt="logo">
                 </div>
