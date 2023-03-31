@@ -1,56 +1,50 @@
 <script>
 import axios from 'axios';
-import {store} from '../store.js';
+import { store } from '../store.js';
+
 export default {
-    name: "Jumbotron",
-    props:{
-        jumbotron: Object,
+  name: 'Jumbotron',
+  props: {
+    jumbotron: Object,
+  },
+  data() {
+    return {
+        store,
+        apartments: [],
+        filterData: {
+        address: '',
+        distance: 20000,
+        bed_n: 0,
+        room_n: 0,
+        optionals: [],
+      },
+    };
+  },
+  methods: {
+    async submitData() {
+      try {
+        // gestione della risposta
+        const { data } = await axios.get(`${store.baseUrl}/api/search`, {
+          params: {
+            address: this.filterData.address,
+            distance: this.filterData.distance,
+            bed_n: this.filterData.bed_n,
+            room_n: this.filterData.room_n,
+            optionals: this.filterData.optionals,
+          },
+        });
+
+        this.apartments = data.apartments;
+        console.log(data);
+      } catch (error) {
+        // gestione dell'errore
+        console.error(error);
+      }
     },
-    data() {
-        return {
-            store,
-            apartments: [],
-            filterData: {
-                address: '',
-                distance: 20000,
-                bed_n: 0,
-                room_n: 0,
-                optionals: [],
-            }
-        };
-    },
-    methods: {
-        async submitData() {
-            try {
-            const data = {
-                address: this.filterData.address,
-                distance: this.filterData.distance,
-                bed_n: this.filterData.bed_n,
-                room_n: this.filterData.room_n,
-                optionals: this.filterData.optionals,
-            };
-
-            const response = await axios.post(`${this.store.baseUrl}/guest/search`, data);
-
-            this.address = '';
-            this.distance = '';
-            this.bed_n = '';
-            this.room_n = '';
-            this.optionals = '';
-            this.apartments = response.data.apartments;
-            console.log(this.apartments)
-            // gestione della risposta
-            } catch (error) {
-            console.error(error);
-
-            // gestione dell'errore
-            }
-
-        }
-    },
-
-}
+  },
+};
 </script>
+
 
 <template>
     <div class="container-jumbo">
