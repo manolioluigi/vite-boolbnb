@@ -38,13 +38,8 @@ export default {
                 console.log('Errore')
                 // pagina 404
             })
-
-
         },
-
     },
-   
-    
 }
 </script>
 
@@ -70,7 +65,6 @@ export default {
                         </div>
                         <div class="offcanvas-body">
                             <form action="POST">
-                                
                                 <div>
                                     <h4 class="mb-3">Search your appartament</h4>
                                     <div class="container-input mb-3">
@@ -110,56 +104,50 @@ export default {
                                     <div>
                                         <h5>KM</h5>
                                         <div id="form-wrapper">
-                                                <form action="/p/quote.php" method="GET">
-                                                    
-                                                    <div id="debt-amount-slider">
-                                                        <input type="radio" v-model="filterData.distance" name="debt-amount" id="1" value="5000" required>
-                                                        <label for="1" data-debt-amount="5km"></label>
-                                                        <input type="radio" v-model="filterData.distance" name="debt-amount" id="2" value="10000" required>
-                                                        <label for="2" data-debt-amount="10km"></label>
-                                                        <input type="radio" v-model="filterData.distance" name="debt-amount" id="3" value="20000" required>
-                                                        <label for="3" data-debt-amount="20km"></label>
-                                                        <input type="radio" v-model="filterData.distance" name="debt-amount" id="4" value="30000" required>
-                                                        <label for="4" data-debt-amount="30km"></label>
-                                                        <input type="radio" v-model="filterData.distance" name="debt-amount" id="5" value="40000" required>
-                                                        <label for="5" data-debt-amount="40km"></label>
-                                                        <div id="debt-amount-pos"></div>
-                                                    </div>
-                                                </form>
+                                            <form action="/p/quote.php" method="GET">
+                                                <div id="debt-amount-slider">
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="1" value="5000" required>
+                                                    <label for="1" data-debt-amount="5km"></label>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="2" value="10000" required>
+                                                    <label for="2" data-debt-amount="10km"></label>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="3" value="20000" required>
+                                                    <label for="3" data-debt-amount="20km"></label>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="4" value="30000" required>
+                                                    <label for="4" data-debt-amount="30km"></label>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="5" value="40000" required>
+                                                    <label for="5" data-debt-amount="40km"></label>
+                                                    <div id="debt-amount-pos"></div>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <!-- <input type="range" value="0">
-                                        <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> -->
                                     </div>
                                     <div class="mt-4">
                                         <h5>Options</h5>
-                                            <label class="container">garden
+                                        <label class="container-check">garden
                                             <input type="checkbox" v-model="filterData.optionals" checked="checked" value="Garden">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">wifi
+                                        </label>
+                                        <label class="container-check">wifi
                                             <input type="checkbox" v-model="filterData.optionals" value="WiFi">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">car space
+                                        </label>
+                                        <label class="container-check">car space
                                             <input type="checkbox" v-model="filterData.optionals" value="Car Space">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">Kitchen
+                                        </label>
+                                        <label class="container-check">Kitchen
                                             <input type="checkbox" v-model="filterData.optionals" value="Kitchen">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">see view
+                                        </label>
+                                        <label class="container-check">see view
                                             <input type="checkbox" v-model="filterData.optionals" value="See View">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">Pool
+                                        </label>
+                                        <label class="container-check">Pool
                                             <input type="checkbox" v-model="filterData.optionals" value="Pool">
                                             <span class="checkmark"></span>
-                                            </label>
-
+                                        </label>
                                     </div>
-
-
                                 </div>
                                 <button type="button" @click="this.submitData">Search</button>
                             </form>
@@ -215,12 +203,9 @@ export default {
         top: 200px;
         left: 130px;
 
-
-
-
         // OPTIONALS
 
-        .container {
+        .container-check {
         display: block;
         position: relative;
         padding-left: 35px;
@@ -234,7 +219,7 @@ export default {
         }
 
         /* Hide the browser's default checkbox */
-        .container input {
+        .container-check input {
         position: absolute;
         opacity: 0;
         cursor: pointer;
@@ -253,12 +238,12 @@ export default {
         }
 
         /* On mouse-over, add a grey background color */
-        .container:hover input ~ .checkmark {
+        .container-check:hover input ~ .checkmark {
         background-color: #ccc;
         }
 
         /* When the checkbox is checked, add a blue background */
-        .container input:checked ~ .checkmark {
+        .container-check input:checked ~ .checkmark {
         background-color: #2196F3;
         }
 
@@ -270,12 +255,12 @@ export default {
         }
 
         /* Show the checkmark when checked */
-        .container input:checked ~ .checkmark:after {
+        .container-check input:checked ~ .checkmark:after {
         display: block;
         }
 
         /* Style the checkmark/indicator */
-        .container .checkmark:after {
+        .container-check .checkmark:after {
         left: 9px;
         top: 5px;
         width: 5px;
@@ -287,9 +272,7 @@ export default {
         transform: rotate(45deg);
         }
 
-
         // DISTANCE
-
 
         $number-of-options: 5;
         html, body {
@@ -302,20 +285,24 @@ export default {
             color: #000;
             user-select: none;
         }
+
         #form-wrapper {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         form {
             width: 90%;
             max-width: 500px;
+
             #form-title {
                 margin-top: 0;
                 font-weight: 400;
                 text-align: center;
             }
+
             #debt-amount-slider {
                 display: flex;
                 flex-direction: row;
@@ -324,6 +311,7 @@ export default {
                 width: 100%;
                 height: 50px;
                 user-select: none;
+
                 &::before {
                     content: " ";
                     position: absolute;
@@ -335,18 +323,21 @@ export default {
                     transform: translate(-50%, -50%);
                     background: #000;
                 }
+
                 input, label {
                     box-sizing: border-box;
                     flex: 1;
                     user-select: none;
                     cursor: pointer;
                 }
+
                 label {
                     display: inline-block;
                     position: relative;
                     width: 20%;
                     height: 100%;
                     user-select: none;
+
                     &::before {
                         content: attr(data-debt-amount);
                         position: absolute;
@@ -360,6 +351,7 @@ export default {
                         opacity: 0.85;
                         transition: all 0.15s ease-in-out;
                     }
+
                     &::after {
                         content: " ";
                         position: absolute;
@@ -377,10 +369,12 @@ export default {
                         cursor: pointer;
                         transition: all 0.15s ease-in-out;
                     }
+
                     &:hover::after {
                         transform: translate(-50%, -50%) scale(1.25);
                     }
                 }
+
                 input {
                     display: none;
                     &:checked {
@@ -388,13 +382,16 @@ export default {
                             font-weight: 800;
                             opacity: 1;
                         }
+
                         + label::after {
                             border-width: 4px;
                             transform: translate(-50%, -50%) scale(0.75);
                         }
+
                         ~ #debt-amount-pos {
                             opacity: 1;
                         }
+
                         @for $i from 1 through $number-of-options {
                             &:nth-child(#{$i * 2 - 1}) ~ #debt-amount-pos {
                                 left: #{($i * 20%) - 10%};
@@ -402,6 +399,7 @@ export default {
                         }
                     }
                 }
+
                 #debt-amount-pos {
                     display: block;
                     position: absolute;
@@ -417,6 +415,7 @@ export default {
                     z-index: 2;
                 }
             }
+
             &:valid {
                 #debt-amount-slider {
                     input {
@@ -431,6 +430,7 @@ export default {
                     }
                 }
             }
+
             & + button {
                 display: block;
                 position: relative;
@@ -480,6 +480,7 @@ export default {
                 opacity: 0.25;
             }
         }
+
         @keyframes spin {
             from {
                 transform: rotate(0deg);
@@ -496,7 +497,7 @@ export default {
         }      
     }
 
-    // OFFCANVAS
+    // OFFCANVAS-INPUT
 
     .container-input {
         position: relative;
@@ -524,9 +525,7 @@ export default {
         width: 360px;
     }
 
-
     // WAVES
-
 
     #footer-navmenu .wave-animation{
         -webkit-transform:rotate(180deg);
