@@ -136,27 +136,24 @@ export default {
 
                                     <div>
                                         <h5>Optionals</h5>
-                                            <label class="container">Garden
+                                        <label class="container-check">Garden
                                             <input type="checkbox" v-model="filterData.optionals" checked="checked" value="Garden">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">Wifi
+                                        </label>
+                                        <label class="container-check">Wifi
                                             <input type="checkbox" v-model="filterData.optionals" value="WiFi">
                                             <span class="checkmark"></span>
-                                            </label>
-                                            <label class="container">Car Space
-
+                                        </label>
+                                        <label class="container-check">Car Space
                                             <input type="checkbox" v-model="filterData.optionals" value="Car Space">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="container-check">Kitchen
                                             <input type="checkbox" v-model="filterData.optionals" value="Kitchen">
                                             <span class="checkmark"></span>
-
-                                            </label>
-                                            <label class="container">Sea View
+                                        </label>
+                                        <label class="container-check">Sea View
                                             <input type="checkbox" v-model="filterData.optionals" value="Sea View">
-
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="container-check">Pool
