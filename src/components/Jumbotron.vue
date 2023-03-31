@@ -61,7 +61,7 @@ export default {
                         <div class="offcanvas-header">
                             <div class="d-flex">
                                 <a href="#">
-                                    <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c513.png" alt="logo" width="100">
+                                    <img src="../../public/img/logo.png" alt="logo" width="100">
                                 </a>
                             </div>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
