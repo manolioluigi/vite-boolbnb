@@ -13,36 +13,41 @@ export default {
             filterData: {
                 address: '',
                 distance: 20000,
-                bed_n: 1,
-                room_n: 1,
+                bed_n: 0,
+                room_n: 0,
                 optionals: [],
+            }
+        };
+    },
+    methods: {
+        async submitData() {
+            try {
+            const data = {
+                address: this.filterData.address,
+                distance: this.filterData.distance,
+                bed_n: this.filterData.bed_n,
+                room_n: this.filterData.room_n,
+                optionals: this.filterData.optionals,
+            };
+
+            const response = await axios.post(`${this.store.baseUrl}/guest/search`, data);
+
+            this.address = '';
+            this.distance = '';
+            this.bed_n = '';
+            this.room_n = '';
+            this.optionals = '';
+            this.apartments = response.data.apartments;
+            console.log(this.apartments)
+            // gestione della risposta
+            } catch (error) {
+            console.error(error);
+
+            // gestione dell'errore
             }
         }
     },
-    methods: {
-        submitData() {
-            const data = {
-                address: this.address,
-                distance: this.distance,
-                bed_n: this.bed_n,
-                room_n: this.room_n,
-                optionals: this.optionals,
-            }
-            axios.post(`${this.store.baseUrl}/guest/search`, data).then((response) => {
-                        this.address = '';
-                        this.distance = '';
-                        this.bed_n = '';
-                        this.room_n = '';
-                        this.optionals = '';
-            }).catch(error => {
-                console.log('Errore')
-                // pagina 404
-            })
 
-
-        },
-
-    },
    
     
 }
@@ -69,7 +74,7 @@ export default {
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <form action="POST">
+                            <form @submit.prevent="submitData">
                                 
                                 <div>
                                     <h4 class="mb-3">Search your appartament</h4>
@@ -131,16 +136,16 @@ export default {
                                         <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div> -->
                                     </div>
                                     <div>
-                                        <h5>Options</h5>
-                                            <label class="container">garden
+                                        <h5>Optionals</h5>
+                                            <label class="container">Garden
                                             <input type="checkbox" v-model="filterData.optionals" checked="checked" value="Garden">
                                             <span class="checkmark"></span>
                                             </label>
-                                            <label class="container">wifi
+                                            <label class="container">Wifi
                                             <input type="checkbox" v-model="filterData.optionals" value="WiFi">
                                             <span class="checkmark"></span>
                                             </label>
-                                            <label class="container">car space
+                                            <label class="container">Car Space
                                             <input type="checkbox" v-model="filterData.optionals" value="Car Space">
                                             <span class="checkmark"></span>
                                             </label>
@@ -148,8 +153,8 @@ export default {
                                             <input type="checkbox" v-model="filterData.optionals" value="Kitchen">
                                             <span class="checkmark"></span>
                                             </label>
-                                            <label class="container">see view
-                                            <input type="checkbox" v-model="filterData.optionals" value="See View">
+                                            <label class="container">Sea View
+                                            <input type="checkbox" v-model="filterData.optionals" value="Sea View">
                                             <span class="checkmark"></span>
                                             </label>
                                             <label class="container">Pool
