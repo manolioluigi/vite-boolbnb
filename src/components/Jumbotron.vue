@@ -120,7 +120,7 @@ export default {
                                                     <label for="3" data-debt-amount="20km"></label>
                                                     <input type="radio" v-model="filterData.distance" name="debt-amount" id="4" value="30" required>
                                                     <label for="4" data-debt-amount="30km"></label>
-                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="5" value="40" required>
+                                                    <input type="radio" v-model="filterData.distance" name="debt-amount" id="5" value="40000" required>
                                                     <label for="5" data-debt-amount="40km"></label>
                                                     <div id="debt-amount-pos"></div>
                                                 </div>
