@@ -35,9 +35,9 @@ export default{
             <div class="card-text py-1">
                 {{ apartment.description }}
             </div>
-            <!-- <router-link :to="{ name: 'SingleProject', params: { slug: apartment.slug } }" class="btn btn-sm btn-success my-3">
+            <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug } }" class="btn btn-sm btn-success my-3">
                 Continua a leggere
-            </router-link> -->
+            </router-link>
         </div>
     </div>
 </template>
