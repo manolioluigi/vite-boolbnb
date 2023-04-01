@@ -11,6 +11,8 @@ export default {
     return {
         store,
         apartments: [],
+        searchQuery: '',
+        addresses: [],
         filterData: {
             address: '',
             distance: 20,
@@ -41,6 +43,23 @@ export default {
         console.error(error);
       }
     },
+    async autoComplete() {
+        if (this.filterData.address.length > 2) {
+          try {
+            const response = await axios.get(`https://api.tomtom.com/search/2/search/${this.filterData.address}.json?key=${'186r2iPLXxGSFMemhylqjC36urDbgOV2'}`);
+            this.addresses = response.data.results;
+          } catch (error) {
+            console.error(error);
+          }
+        } else {
+          this.addresses = [];
+        }
+      },
+      selectAddress(address) {
+        this.filterData.address = address.address.freeformAddress;
+        this.addresses = [];
+      },
+    
   },
 };
 </script>
@@ -78,16 +97,28 @@ export default {
     
                             <form @submit.prevent="submitData">
                                 
+                                <div class="form-group">
+                                    <label for="filterAddress">Address</label>
+                                    <input type="text" class="form-control" id="filterAddress" v-model="filterData.address" placeholder="Inserisci l'indirizzo" @keyup="autoComplete">
+                                    <div v-if="addresses.length > 0">
+                                        <ul class="list-group">
+                                        <li class="list-group-item" v-for="(address, index) in addresses" :key="index" @click="selectAddress(address)"> 
+                                            {{ address.address.freeformAddress }}
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
     
                                 <div>
                                     <h4 class="mb-3">Search your appartament</h4>
                                     <div class="container-input mb-3">
-                                        <input type="text" placeholder="Roma, Viale del Popolo, 0000" name="text" class="input" v-model="filterData.address">
+                                        <input type="text" placeholder="Roma, Viale del Popolo, 0000" name="text" class="input" id="searchbar" @keyup="autoComplete">
                                         <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
                                         </svg>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div>
                                     <div class="d-flex align-items-center mb-3">
                                         <i class="fas fa-sliders"></i>
