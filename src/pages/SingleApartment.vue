@@ -81,8 +81,11 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-between">
+                    <div class="row d-flex justify-content-between my-2">
                         <div class="col-7">
+                            <div>
+                                <h5>Description</h5>
+                            </div>
                             <div>
                                 <p>{{ apartment.description }}</p>
                             </div>
@@ -103,15 +106,18 @@ export default {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-4 ">
+                        <div class="col-4">
+                            <div>
+                                <h5>Contact host</h5>
+                            </div>
                             <form>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input v-model="messageData.user_mail" type="email" name="user_email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <label for="exampleFormControlInput1" class="form-label">Your address</label>
+                                    <input v-model="messageData.user_mail" type="email" name="user_email" class="form-control" id="exampleFormControlInput1" placeholder="name@gmail.com">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea v-model="messageData.message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="exampleFormControlTextarea1" class="form-label">Write a message</label>
+                                    <textarea v-model="messageData.message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </form>
