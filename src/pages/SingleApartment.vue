@@ -10,10 +10,9 @@ export default {
             apartment: null,
             optionals: [],
             loading: true,
-            messageData: {
-                user_mail: '',
-                message: ''
-            },
+            success: false,
+            user_mail: '',
+            message: ''
         }
     },
     mounted() {
@@ -31,20 +30,28 @@ export default {
         })
     },
     methods: {
-        async submitMessage() {
-        try {
-            // gestione della risposta
-            const { data } = await axios.get(`${store.baseUrl}/web/messages`, {
-            params: {
-                user_mail: this.messageData.user_mail,
-                message: this.messageData.message,
-            },
-            });
-        } catch (error) {
-            // gestione dell'errore
-            console.error(error);
-        }
+        submitMessage(apartment_id) {
+
+            this.success = false;
+            // invio il form
+            this.loading = true;
+            const formData = {
+                user_mail: this.user_mail,
+                message: this.message,
+                apartment_id: apartment_id,
+            };
+            axios.post(`${store.baseUrl}/api/messages`, formData).then((response) => {
+                this.success = response.data.success;
+                //  se è andata bene invia il messaggio
+                if (this.success) {
+                    this.user_mail = "";
+                    this.message = "";
+                    // altrimenti mostra gli errori
+                }
+                this.loading = false;
+            })
         },
+
     }
 }
 </script>
@@ -107,13 +114,13 @@ export default {
                             <form>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input v-model="messageData.user_mail" type="email" name="user_email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea v-model="messageData.message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Send</button>
+                                <button type="submit" class="btn btn-primary" @click.prevent="submitMessage(apartment.id)">Send</button>
                             </form>
                         </div>
                     </div>      
