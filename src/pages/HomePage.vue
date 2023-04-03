@@ -51,7 +51,7 @@
             </div>
             <div v-else class="col-12 d-flex justify-content-center flex-wrap">
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4" v-for="apartment in apartments" :key="apartment.id">
+                    <div class="col-12 col-md-6 col-lg-4 mt-5" v-for="apartment in apartments" :key="apartment.id">
                         <ApartmentCard :apartment="apartment"></ApartmentCard>
                     </div>
                 </div>

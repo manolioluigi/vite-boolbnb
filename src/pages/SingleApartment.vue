@@ -10,6 +10,10 @@ export default {
             apartment: null,
             optionals: [],
             loading: true,
+            messageData: {
+                user_mail: '',
+                message: ''
+            },
         }
     },
     mounted() {
@@ -25,6 +29,22 @@ export default {
                 this.$router.push({ 'name': 'not_found' })
             }
         })
+    },
+    methods: {
+        async submitMessage() {
+        try {
+            // gestione della risposta
+            const { data } = await axios.get(`${store.baseUrl}/web/messages`, {
+            params: {
+                user_mail: this.messageData.user_mail,
+                message: this.messageData.message,
+            },
+            });
+        } catch (error) {
+            // gestione dell'errore
+            console.error(error);
+        }
+        },
     }
 }
 </script>
@@ -87,35 +107,17 @@ export default {
                             <form>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input type="email" name="user_email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <input v-model="messageData.user_mail" type="email" name="user_email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea v-model="messageData.message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </form>
                         </div>
-                    </div>
-                    
-                    
+                    </div>      
                 </div>
-                
-
-                
-                <!-- <div class="card mt-5">
-                    <div class="card-img-top">
-                        <div class="cover-img">
-                            <img class="img-fluid" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/200'">
-                        </div>
-                    </div>
-                    <div class="card-title mt-3">
-                        <h2>{{ apartment.title }}</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>{{ apartment.description }}</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

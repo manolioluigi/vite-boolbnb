@@ -72,7 +72,7 @@ export default {
             </div>
             <div class="col d-flex justify-content-center align-items-center flex-column">
                 <div>
-                    <img src="../../public/img/logo.png" width="400" alt="logo">
+                    <img src="../../public/img/BOOLBNB-removebg-ok.png" width="450" alt="logo">
                 </div>
                 <div class="my-3">
                     <h3>Travel with emotion & experience</h3>
@@ -80,15 +80,14 @@ export default {
                 <div class="offcanvas-container">
                     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                         <button class="btn-boolBnB">
-                            <img src="../../public/img/airbnb.svg" alt="logo" height="35" width="35">
-                            <span>BOOLBNB</span>
+                            <span>SEARCH</span>
                         </button>
                     </a>
                     <div class="offcanvas offcanvas-start" style="width: 35%;" tabindex="3" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
                             <div class="d-flex">
                                 <a href="#">
-                                    <img src="../../public/img/logo.png" alt="logo" width="100">
+                                    <img src="../../public/img/BOOLBNB-removebg-ok.png" alt="logo" width="200">
                                 </a>
                             </div>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
