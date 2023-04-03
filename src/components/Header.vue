@@ -24,7 +24,7 @@ export default{
             <div class="container-fluid">
                 <div>
                     <a class="navbar-brand" href="#">
-                        <img src="../../public/img/logo.png" alt="logo" width="200">
+                        <img src="../../public/img/BOOLBNB-removebg-ok.png" alt="logo" width="200">
                     </a>
                 </div>
                 <div>
