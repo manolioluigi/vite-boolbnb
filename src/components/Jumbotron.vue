@@ -44,7 +44,7 @@ export default {
       }
     },
     async autoComplete() {
-        if (this.filterData.address.length > 6) {
+        if (this.filterData.address.length > 3) {
           try {
             const response = await axios.get(`https://api.tomtom.com/search/2/search/${this.filterData.address}.json?key=${'186r2iPLXxGSFMemhylqjC36urDbgOV2'}`);
             this.addresses = response.data.results;
