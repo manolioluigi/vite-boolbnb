@@ -88,8 +88,11 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-between">
+                    <div class="row d-flex justify-content-between my-2">
                         <div class="col-7">
+                            <div>
+                                <h5>Description</h5>
+                            </div>
                             <div>
                                 <p>{{ apartment.description }}</p>
                             </div>
@@ -110,15 +113,20 @@ export default {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-4 ">
+                        <div class="col-4">
+                            <div>
+                                <h5>Contact host</h5>
+                            </div>
                             <form>
                                 <div class="mb-3">
+
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                                     <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"></textarea>
+
                                 </div>
                                 <button type="submit" class="btn btn-primary" @click.prevent="submitMessage(apartment.id)">Send</button>
                             </form>
