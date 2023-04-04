@@ -38,7 +38,7 @@ export default{
             </div>
         </div> -->
 
-        <div class="cards">
+        <div class="cards" id="cards-search">
             <img class="cards-img" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/300'" :alt="apartment.title">
             <div class="cards-list p-4">
                 <h4>{{ apartment.title }}</h4>
