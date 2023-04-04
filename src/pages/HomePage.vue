@@ -3,12 +3,14 @@
     import {store} from '../store.js';
     import ApartmentCard from '../components/ApartmentCard.vue';
     import Jumbotron from '../components/Jumbotron.vue';
+    import FilteredApartmentCard from '../components/FilteredApartmentCard.vue';
 
     export default {
         name: 'HomePage',
         components:{
             ApartmentCard,
-            Jumbotron
+            Jumbotron,
+            FilteredApartmentCard
         },
         data(){
             return{
@@ -28,6 +30,7 @@
                         this.currentPage = response.data.results.current_page;
                         this.lastPage = response.data.results.last_page;
                         this.loading = false;
+                        store.filterFlag = false;
                     }else{
                         alert('La chiamata non è andata a buon fine')
                     }
@@ -51,9 +54,13 @@
             </div>
             <div v-else class="col-12 d-flex justify-content-center flex-wrap">
                 <div class="row filtered-data-container">
+                    
                     <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in apartments" :key="apartment.id">
-                        <ApartmentCard :apartment="apartment"></ApartmentCard>
+                        <ApartmentCard :apartment="apartment" v-if="!store.filterFlag"></ApartmentCard>
                     </div>
+                    
+                    <FilteredApartmentCard v-if="store.filterFlag"></FilteredApartmentCard>
+                    
                 </div>
             </div>
             <div class="row">

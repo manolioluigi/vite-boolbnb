@@ -37,33 +37,16 @@ export default {
             },
         });
         
-        this.apartments = data.apartments;
-        
-        const container = document.querySelector('.filtered-data-container');
-        container.innerHTML = '';
-        console.log(container)
-        
-
-        if (data.length) {
-            let card = 'ciao';
-            console.log(card)
-            data.forEach(item => {
-                const listItem = document.innerHTML = card;
-                container.appendChild(listItem);
-            });
-        } else {
-            // const message = document.createElement('p');
-            // message.innerText = 'Nessun risultato trovato';
-            // container.appendChild(message);
-        }
-        console.log(container)
+        this.apartments = data;
+        store.filteredApartments = data;
+        store.filterFlag = true;
+        console.log(store.filteredApartments)
         
         console.log(data);
-
         
       } catch (error) {
         // gestione dell'errore
-        // console.error(error);
+        console.error(error);
       }
     },
     async autoComplete() {
