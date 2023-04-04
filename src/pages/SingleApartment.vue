@@ -1,9 +1,13 @@
 <script>
 import { store } from '../store';
 import axios from 'axios';
+import Map from '../components/Map.vue';
 
 export default {
     name: 'SingleApartment',
+    components: {
+        Map,
+    },
     data(){
         return{
             store,
@@ -132,6 +136,9 @@ export default {
                             </form>
                         </div>
                     </div>      
+                    <div class="row">
+                        <Map :address="apartment.address"></Map>
+                    </div>
                 </div>
             </div>
         </div>
