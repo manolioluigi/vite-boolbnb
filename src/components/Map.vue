@@ -6,10 +6,10 @@
   
   <script>
   import axios from 'axios';
-  import { Map, View } from 'ol';
   import { fromLonLat } from 'ol/proj';
   import TileLayer from 'ol/layer/Tile';
   import OSM from 'ol/source/OSM';
+  import { Map, View, Overlay } from 'ol';
   
   export default {
     data() {
