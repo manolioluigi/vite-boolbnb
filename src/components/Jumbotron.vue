@@ -9,6 +9,7 @@ export default {
   },
   data() {
     return {
+    
         store,
         apartments: [],
         searchQuery: '',
@@ -27,20 +28,42 @@ export default {
       try {
         // gestione della risposta
         const { data } = await axios.get(`${store.baseUrl}/api/search`, {
-          params: {
-            address: this.filterData.address,
-            distance: this.filterData.distance,
-            bed_n: this.filterData.bed_n,
-            room_n: this.filterData.room_n,
-            optionals: this.filterData.optionals,
-          },
+            params: {
+                address: this.filterData.address,
+                distance: this.filterData.distance,
+                bed_n: this.filterData.bed_n,
+                room_n: this.filterData.room_n,
+                optionals: this.filterData.optionals,
+            },
         });
-
+        
         this.apartments = data.apartments;
+        
+        const container = document.querySelector('.filtered-data-container');
+        container.innerHTML = '';
+        console.log(container)
+        
+
+        if (data.length) {
+            let card = 'ciao';
+            console.log(card)
+            data.forEach(item => {
+                const listItem = document.innerHTML = card;
+                container.appendChild(listItem);
+            });
+        } else {
+            // const message = document.createElement('p');
+            // message.innerText = 'Nessun risultato trovato';
+            // container.appendChild(message);
+        }
+        console.log(container)
+        
         console.log(data);
+
+        
       } catch (error) {
         // gestione dell'errore
-        console.error(error);
+        // console.error(error);
       }
     },
     async autoComplete() {
