@@ -45,12 +45,8 @@ export default {
             this.errorEmail = "";
             this.errorMessage = "";
 
-            if (!this.user_mail) {
+            if (!this.user_mail || !this.message) {
                 this.errorEmail = "Email is required";
-                return;
-            }
-
-            if (!this.message) {
                 this.errorMessage = "Message is required";
                 return;
             }
@@ -69,14 +65,6 @@ export default {
                     this.message = '';
                     // altrimenti mostra gli errori
                 }
-                // else{
-                //     if (errors.user_mail) {
-                //         this.errorEmail = errors.user_mail[0];
-                //     }
-                //     else if (errors.message) {
-                //         this.errorMessage = errors.message[0];
-                //     }
-                // }
                 this.loading = false;
             });
             
@@ -90,83 +78,86 @@ export default {
 </script>
 
 <template lang="">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center mt-5" v-if="loading">
-                <div class="loader"></div>
-            </div>
-            <div class="col-12" v-else>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="float-end">
-                                <router-link :to="{ name: 'homepage' }" class="btn btn-sm btn-pink my-2">
-                                    Back to apartment
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>{{ apartment.title }}</h2>
-                        </div>
-                        <div class="col-12">
-                            <h5>{{ apartment.address }}</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-center">
-                                <img class="img-fluid rounded-4 my-2" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/200'">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-between my-2">
-                        <div class="col-7">
-                            <div>
-                                <h5>Description</h5>
-                            </div>
-                            <div>
-                                <p>{{ apartment.description }}</p>
-                            </div>
-                            <div>
-                                <ul class="list-unstyled d-flex">
-                                    <li class="me-4"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
-                                    <li class="me-4"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
-                                    <li class="me-4"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
-                                    <li class="me-4"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h5>Optionals</h5>
-                            </div>
-                            <div>
-                                <ul class="list-unstyled d-flex">
-                                    <li  v-for="optional in apartment.optionals" :key="optional.id" class="me-4"><i :class="optional.icon" class="me-1"></i><span class="me-3">{{ optional.name }}</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div>
-                                <h5>Contact host</h5>
-                            </div>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                    <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                    <p class="text-danger">{{errorEmail}}</p>
+    <div class="bg-pink">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center mt-5" v-if="loading">
+                    <div class="loader"></div>
+                </div>
+                <div class="col-12" v-else>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="float-end">
+                                    <router-link :to="{ name: 'homepage' }" class="btn btn-sm btn-pink my-2">
+                                        Back to apartment
+                                    </router-link>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                    <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"></textarea>
-                                    <p class="text-danger">{{errorMessage}}</p>
-                                </div>
-                                <button type="submit" class="btn btn-primary" @click.prevent="submitMessage(apartment.id)" value="Send">Send</button>
-                            </form>
+                            </div>
                         </div>
-                    </div>      
-                    <div class="row">
-                        <Map :address="apartment.address"></Map>
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>{{ apartment.title }}</h2>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{ apartment.address }}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-center">
+                                    <img class="img-fluid rounded-4 my-2" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/200'">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-between my-2">
+                            <div class="col-7">
+                                <div>
+                                    <h3 class="mb-4">Description</h3>
+                                </div>
+                                <div>
+                                    <p class="mb-3">{{ apartment.description }}</p>
+                                </div>
+                                <div>
+                                    <ul class="list-unstyled d-flex">
+                                        <li class="me-4"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
+                                        <li class="me-4"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
+                                        <li class="me-4"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
+                                        <li class="me-4"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="my-4">Optionals</h3>
+                                </div>
+                                <div>
+                                    <ul class="list-unstyled d-flex">
+                                        <li  v-for="optional in apartment.optionals" :key="optional.id" class="me-4"><i :class="optional.icon" class="me-1"></i><span class="me-3">{{ optional.name }}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div>
+                                    <h3 class="mb-4">Contact host</h3>
+                                </div>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                        <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                        <p class="text-danger">{{errorEmail}}</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                        <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"></textarea>
+                                        <p class="text-danger">{{errorMessage}}</p>
+                                    </div>
+                                    <button type="submit" class="btn btn-pink" @click.prevent="submitMessage(apartment.id)" value="Send">Send</button>
+                                </form>
+                            </div>
+                        </div>      
+                        <div class="row">
+                            <Map :address="apartment.address"></Map>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,10 +166,18 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.bg-pink{
+        background: rgb(237,130,172);
+        background: linear-gradient(0deg, rgba(237,130,172,1) 15%, rgba(255,255,255,1) 50%);
+    }
 
     .btn-pink{
         background-color:rgb(255, 56, 92);
         color: white;
+
+        &:hover{
+            background-color: rgb(255, 11, 56);
+        }
     }
     .cover-img{
         width: 300px;

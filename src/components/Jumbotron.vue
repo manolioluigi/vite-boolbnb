@@ -243,7 +243,7 @@ export default {
     }
 
     .offcanvas-container{
-        z-index: 2;
+        z-index: 3;
         
         // OPTIONALS
 
