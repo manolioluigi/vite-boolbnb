@@ -48,36 +48,37 @@
     <div class="bg-pink">
 
         <Jumbotron :jumbotron="jumbotron"></Jumbotron>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div v-if="loading" class="col-12 d-flex justify-content-center">
-                <div class="my-5 loader"></div> 
-            </div>
-            <div v-else class="col-12 d-flex justify-content-center flex-wrap">
-                <div class="row filtered-data-container">
-                    <div class="d-flex" v-if="!store.filterFlag">
-                        <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in apartments" :key="apartment.id">
-                            <ApartmentCard :apartment="apartment"></ApartmentCard>
-                        </div>
-
-                    </div>
+        
+        <div class="container">
+            <div class="row">
+                <div v-if="loading" class="col-12 d-flex justify-content-center">
+                    <div class="my-5 loader"></div> 
                 </div>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center my-5">
-                        <nav>
-                            <ul class="pagination">
-                                <li :class="currentPage == 1 ? 'disabled' : 'page-item'">
-                                    <button class="page-link" @click="getApartments(currentPage - 1)">Prev</button>
-                                </li>
-                                <li :class="currentPage == i ? 'disabled' : 'page-item'" v-for="i in lastPage" :key="i">
-                                    <button class="page-link" @click="getApartments(i)">{{ i }}</button>
-                                </li>
-                                <li :class="currentPage == lastPage ? 'disabled' : 'page-item'">
-                                    <button class="page-link" @click="getApartments(currentPage + 1)">Next</button>
-                                </li>
-                            </ul>
-                        </nav>
+                <div v-else class="col-12 d-flex justify-content-center flex-wrap">
+                    <div class="row filtered-data-container">
+                        <div class="d-flex" v-if="!store.filterFlag">
+                            <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in apartments" :key="apartment.id">
+                                <ApartmentCard :apartment="apartment"></ApartmentCard>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center my-5">
+                            <nav>
+                                <ul class="pagination">
+                                    <li :class="currentPage == 1 ? 'disabled' : 'page-item'">
+                                        <button class="page-link" @click="getApartments(currentPage - 1)">Prev</button>
+                                    </li>
+                                    <li :class="currentPage == i ? 'disabled' : 'page-item'" v-for="i in lastPage" :key="i">
+                                        <button class="page-link" @click="getApartments(i)">{{ i }}</button>
+                                    </li>
+                                    <li :class="currentPage == lastPage ? 'disabled' : 'page-item'">
+                                        <button class="page-link" @click="getApartments(currentPage + 1)">Next</button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
