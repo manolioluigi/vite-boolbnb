@@ -15,8 +15,13 @@ export default {
             optionals: [],
             loading: true,
             success: false,
+            errors: false,
             user_mail: '',
-            message: ''
+            message: '',
+            errorEmail: '',
+            errorMessage: '',
+
+            
         }
     },
     mounted() {
@@ -35,8 +40,20 @@ export default {
     },
     methods: {
         submitMessage(apartment_id) {
-
+            
             this.success = false;
+            this.errorEmail = "";
+            this.errorMessage = "";
+
+            if (!this.user_mail) {
+                this.errorEmail = "Email is required";
+                return;
+            }
+
+            if (!this.message) {
+                this.errorMessage = "Message is required";
+                return;
+            }
             // invio il form
             this.loading = true;
             const formData = {
@@ -48,13 +65,25 @@ export default {
                 this.success = response.data.success;
                 //  se è andata bene invia il messaggio
                 if (this.success) {
-                    this.user_mail = "";
-                    this.message = "";
+                    this.user_mail = '';
+                    this.message = '';
                     // altrimenti mostra gli errori
                 }
+                // else{
+                //     if (errors.user_mail) {
+                //         this.errorEmail = errors.user_mail[0];
+                //     }
+                //     else if (errors.message) {
+                //         this.errorMessage = errors.message[0];
+                //     }
+                // }
                 this.loading = false;
-            })
+            });
+            
         },
+        
+
+        
 
     }
 }
@@ -122,17 +151,21 @@ export default {
                                 <h5>Contact host</h5>
                             </div>
                             <form>
+                                <div>
+                                  
+                                </div>
+                              
                                 <div class="mb-3">
-
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                                     <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <p class="text-danger">{{errorEmail}}</p>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
                                     <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"></textarea>
-
+                                    <p class="text-danger">{{errorMessage}}</p>
                                 </div>
-                                <button type="submit" class="btn btn-primary" @click.prevent="submitMessage(apartment.id)">Send</button>
+                                <button type="submit" class="btn btn-primary" @click.prevent="submitMessage(apartment.id)" value="Send">Send</button>
                             </form>
                         </div>
                     </div>      
