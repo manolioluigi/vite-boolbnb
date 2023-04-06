@@ -54,14 +54,13 @@
                      <div class="my-5 loader"></div> 
                  </div>
                  <div v-else class="col-12 d-flex justify-content-center flex-wrap">
-                     <div class="row filtered-data-container">
-                         
-                         <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in apartments" :key="apartment.id">
-                             <ApartmentCard :apartment="apartment" v-if="!store.filterFlag"></ApartmentCard>
-                         </div>
-                         
+                    <div class="row filtered-data-container">
+                        <div v-if="!store.filterFlag" class="d-flex flex-wrap">
+                            <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in apartments" :key="apartment.id">
+                                <ApartmentCard :apartment="apartment"></ApartmentCard>
+                            </div>
+                        </div>
                          <FilteredApartmentCard v-if="store.filterFlag"></FilteredApartmentCard>
-                         
                      </div>
                  </div>
                  <div class="row">
