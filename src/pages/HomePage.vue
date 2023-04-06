@@ -60,10 +60,7 @@
                                 <ApartmentCard :apartment="apartment"></ApartmentCard>
                             </div>
                         </div>
-                         
-                         
                          <FilteredApartmentCard v-if="store.filterFlag"></FilteredApartmentCard>
-                         
                      </div>
                  </div>
                  <div class="row">
