@@ -15,7 +15,7 @@ export default{
 </script>
 
 <template> 
-    <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug }}" class="link-apartment">
+    <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug }}" class="link-apartment" target="_blank">
         <!-- <div class="card my-3 h-100">
             <div class="row g-0 h-100">
                 <div class="col-md-6">
@@ -48,9 +48,6 @@ export default{
                     <li class="me-4 pb-2"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
                     <li class="me-4 pb-2"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
                 </ul> 
-                <div>
-                    <p>CLICK TO SEE MORE  <i class="fas fa-arrow-right me-2"></i></p>
-                </div>
             </div>
         </div>
     </router-link>

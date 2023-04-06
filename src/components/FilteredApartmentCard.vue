@@ -13,7 +13,7 @@ export default{
 
 <template> 
   
-    <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in store.filteredApartments" :key="apartment.id">
+    <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in store.filteredApartments" :key="apartment.id" target="_blank">
         <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug }}" class="link-apartment">
 
         <div class="cards" id="cards-search">
