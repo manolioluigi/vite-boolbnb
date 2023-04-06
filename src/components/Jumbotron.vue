@@ -88,7 +88,7 @@ export default {
                             <span>SEARCH</span>
                         </button>
                     </a>
-                    <div class="offcanvas offcanvas-start" style="width: 35%;" tabindex="3" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas offcanvas-start" style="width: 450px;" tabindex="3" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
                             <div class="d-flex">
                                 <a href="#">
