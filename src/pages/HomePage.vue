@@ -44,21 +44,23 @@
 </script>
 
 <template>
+
     <div class="bg-pink">
-        <div>
-            <Jumbotron :jumbotron="jumbotron"></Jumbotron>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div v-if="loading" class="col-12 d-flex justify-content-center">
-                    <div class="my-5 loader"></div> 
-                </div>
-                <div v-else class="col-12 d-flex justify-content-center flex-wrap">
-                    <div class="row filtered-data-container">
+
+        <Jumbotron :jumbotron="jumbotron"></Jumbotron>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div v-if="loading" class="col-12 d-flex justify-content-center">
+                <div class="my-5 loader"></div> 
+            </div>
+            <div v-else class="col-12 d-flex justify-content-center flex-wrap">
+                <div class="row filtered-data-container">
+                    <div class="d-flex" v-if="!store.filterFlag">
                         <div class="col-12 col-md-6 col-lg-4 my-5" v-for="apartment in apartments" :key="apartment.id">
-                            <ApartmentCard :apartment="apartment" v-if="!store.filterFlag"></ApartmentCard>
+                            <ApartmentCard :apartment="apartment"></ApartmentCard>
                         </div>
-                        <FilteredApartmentCard v-if="store.filterFlag"></FilteredApartmentCard>
+
                     </div>
                 </div>
                 <div class="row">
