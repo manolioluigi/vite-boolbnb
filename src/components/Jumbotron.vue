@@ -80,7 +80,7 @@ export default {
                     <img src="../../public/img/BOOLBNB-removebg-ok.png" width="450" alt="logo">
                 </div>
                 <div class="my-3">
-                    <h3>Travel with emotion & experience</h3>
+                    <h3 class="text-center">Travel with emotion & experience</h3>
                 </div>
                 <div class="offcanvas-container">
                     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
