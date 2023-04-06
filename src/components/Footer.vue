@@ -7,14 +7,14 @@ export default {
 <template>
         <footer>
             <div class="container py-2">
-                <div class="row d-flex align-items-center">
-                    <div class="col-4">
+                <div class="row d-flex align-items-center media">
+                    <div class="col-4 d-none d-md-block">
                         <img src="../../public/img/airbnb-removebg.png" width="50" alt="log-sm">
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 d-none d-md-block">
                         <h6 class="text-white">Copyright © 2023 BoolBnB Inc. All rights reserved</h6>
                     </div>
-                    <div class="col-4 d-flex justify-content-end">
+                    <div class="col-4 d-block d-flex justify-content-end">
                         <div class="d- flex flex-column">
                             <div>
                                 <h5 class="text-white">Find us on:</h5>
@@ -49,6 +49,14 @@ export default {
                 &:hover{
                 color: rgb(255, 56, 92);
                 }
+            }
+        }
+
+        @media (min-width: 350px) and (max-width:767px){
+            .media{
+                display: flex;
+                justify-content: center;
+                text-align: center;
             }
         }
     }
