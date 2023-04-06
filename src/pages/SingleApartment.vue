@@ -100,7 +100,7 @@ export default {
                     <div class="row">
                         <div class="col">
                             <div class="float-end">
-                                <router-link :to="{ name: 'homepage' }" class="btn btn-sm btn-success my-2">
+                                <router-link :to="{ name: 'homepage' }" class="btn btn-sm btn-pink my-2">
                                     Back to apartment
                                 </router-link>
                             </div>
@@ -116,7 +116,7 @@ export default {
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <div>
+                            <div class="d-flex justify-content-center">
                                 <img class="img-fluid rounded-4 my-2" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/200'">
                             </div>
                         </div>
@@ -151,10 +151,6 @@ export default {
                                 <h5>Contact host</h5>
                             </div>
                             <form>
-                                <div>
-                                  
-                                </div>
-                              
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                                     <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -179,6 +175,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+    .btn-pink{
+        background-color:rgb(255, 56, 92);
+        color: white;
+    }
     .cover-img{
         width: 300px;
     }

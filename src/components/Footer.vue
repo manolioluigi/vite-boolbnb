@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
     footer{
         width: 100%;
-        background-color: #654ea3;
+        background-color: rgb(237,130,172);
 
         li{
             i{
