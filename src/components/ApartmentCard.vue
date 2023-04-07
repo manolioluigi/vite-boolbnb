@@ -26,8 +26,8 @@ export default{
                     <li class="me-4 pb-2"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
                 </ul> 
             </div>
-            <div class="title d-flex justify-content-center my-3">
-                <h3>{{ apartment.title }}</h3>
+            <div class="title d-flex my-3 ellipsis ellipsis-cont">
+                <h3 class="flex-wrap d-flex">{{ apartment.title }}</h3>
             </div>
         </div>
     </router-link>
@@ -69,6 +69,16 @@ export default{
             width: 100%;
             opacity: 0;
             transition: .5s ease;
+        }
+
+        .ellipsis {
+            text-overflow: ellipsis; /* enables ellipsis */
+            white-space: nowrap; /* keeps the text in a single line */
+            overflow: hidden; /* keeps the element from overflowing its parent */
+        }
+
+        .ellipsis-cont{
+            overflow: hidden;
         }
     }
 
