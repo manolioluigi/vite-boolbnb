@@ -112,7 +112,7 @@ export default {
                             </div>
                         </div>
                         <div class="row d-flex justify-content-between my-2">
-                            <div class="col-lg-7 col-sm-6">
+                            <div class="col-sm-6 col-md-6 col-lg-7">
                                 <div>
                                     <h3 class="mb-4">Description</h3>
                                 </div>
@@ -136,7 +136,7 @@ export default {
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div>
                                     <h3 class="mb-4">Contact host</h3>
                                 </div>
@@ -183,11 +183,10 @@ export default {
         width: 300px;
     }
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width:992px){
     .responsive-md {
         display: flex;
         flex-direction: column;
-        
     }
 }
 </style>
