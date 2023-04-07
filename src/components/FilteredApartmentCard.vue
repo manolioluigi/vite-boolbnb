@@ -26,7 +26,7 @@ export default{
                     <li class="me-4 pb-2"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
                 </ul> 
             </div>
-            <div class="title d-flex justify-content-center my-3 ellipsis ellipsis-cont">
+            <div class="title d-flex my-3 ellipsis ellipsis-cont">
                 <h3>{{ apartment.title }}</h3>
             </div>
         </div>

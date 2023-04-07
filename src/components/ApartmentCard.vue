@@ -27,7 +27,7 @@ export default{
                 </ul> 
             </div>
             <div class="title d-flex my-3 ellipsis ellipsis-cont">
-                <h3 class="flex-wrap d-flex">{{ apartment.title }}</h3>
+                <h3>{{ apartment.title }}</h3>
             </div>
         </div>
     </router-link>
