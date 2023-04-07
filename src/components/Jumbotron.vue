@@ -77,7 +77,7 @@ export default {
             </div>
             <div class="col d-flex justify-content-center align-items-center flex-column">
                 <div>
-                    <img src="../../public/img/BOOLBNB-removebg-ok.png" width="450" alt="logo">
+                    <img class="logo" src="../../public/img/BOOLBNB-removebg-ok.png" width="450" alt="logo">
                 </div>
                 <div class="my-3">
                     <h3 class="text-center">Travel with emotion & experience</h3>
@@ -662,5 +662,10 @@ export default {
         margin-right: 10px;
     }
   
+}
+@media screen and (max-width: 576px){
+    .logo {
+        width: 350px;
+    }    
 }
 </style>
