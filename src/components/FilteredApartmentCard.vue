@@ -36,34 +36,25 @@ export default{
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 
 .link-apartment{
     color: black;
     text-decoration: none;
 
-    // img{
-    //     object-fit: cover;
-    //     width: 100%;
-    //     height: 100%;
-    // }
-
-    // &:hover .card-body{
-    //     color: black;
-    // }
-
     .cards{
         position: relative;
         cursor: pointer;
-        width: 100%;
-        height: 100%;
+        width: 400px;
+        height: 300px;
 
         .title{
             color: black;
         }
 
         .cards-img {
+            object-fit: cover;
             display: block;
             width: 100%;
             height: 100%;

@@ -64,7 +64,7 @@
                      </div>
                  </div>
                  <div class="row">
-                     <div class="col-12 d-flex justify-content-center my-5">
+                     <div class="col-lg-12 col-sm-12 d-flex justify-content-center my-5">
                          <nav>
                              <ul class="pagination">
                                  <li :class="currentPage == 1 ? 'disabled' : 'page-item'">
