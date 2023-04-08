@@ -48,15 +48,15 @@
          <div>
              <Jumbotron :jumbotron="jumbotron"></Jumbotron>
          </div>
-         <div class="container">
+         <div class="container-fluid">
              <div class="row">
-                 <div v-if="loading" class="col-12 d-flex justify-content-center">
+                 <div v-if="loading" class="col-12 ">
                      <div class="my-5 loader"></div> 
                  </div>
-                 <div v-else class="col-12 d-flex justify-content-center flex-wrap">
+                 <div v-else class="col-12">
                     <div class="row filtered-data-container">
-                        <div v-if="!store.filterFlag" class="d-flex flex-wrap">
-                            <div class="col-12 col-md-6 col-lg-4 my-5 p-3" v-for="apartment in apartments" :key="apartment.id">
+                        <div v-if="!store.filterFlag" class="d-flex flex-wrap" >
+                            <div class="col-12 col-md-6 col-lg-4 my-5 d-flex flex-wrap justify-content-center" v-for="apartment in apartments" :key="apartment.id">
                                 <ApartmentCard :apartment="apartment"></ApartmentCard>
                             </div>
                         </div>
@@ -87,15 +87,9 @@
 
 <style lang="scss" scoped>
 
-.bg-pink{
+    .bg-pink{
         background: rgb(237,130,172);
         background: linear-gradient(0deg, rgba(237,130,172,1) 15%, rgba(255,255,255,1) 50%);
     }
-
-    .card-img-top{
-        img{
-            max-width: 300px;
-        }
-    }
-
+    
 </style>
