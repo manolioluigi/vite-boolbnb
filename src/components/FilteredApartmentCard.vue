@@ -17,6 +17,7 @@ export default{
         <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug }}" class="link-apartment" target="_blank">
             <div class="cards" id="cards-search">
             <img class="cards-img" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/300'" :alt="apartment.title">
+            <span v-if="apartment.sponsorship_id"><i class="fas fa-medal spons-badge"></i></span>
             <div class="cards-list">
                 <ul class="list-unstyled d-flex flex-column">
                     <li class="me-4 pb-2"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
@@ -92,6 +93,16 @@ export default{
         color: black;
         text-decoration: none;
     }
+}
+
+.spons-badge{
+ font-size: 50px;
+ color: gold;
+
+ border-radius: 50%;
+ position: absolute;
+ top: 0;
+ right: 10px;
 }
 
 </style>
