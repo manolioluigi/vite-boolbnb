@@ -18,8 +18,10 @@ export default{
     <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug }}" class="link-apartment" target="_blank">
         <div class="cards" id="cards-search">
             <img class="cards-img" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/300'" :alt="apartment.title">
+
             <span v-if="apartment.sponsorship_id"><i class="fas fa-medal spons-badge"></i></span>
-            <div class="cards-list p-4">
+            <div class="cards-list">
+
                 <ul class="list-unstyled d-flex flex-column">
                         <li class="me-4 pb-2"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
                         <li class="me-4 pb-2"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
@@ -28,7 +30,8 @@ export default{
                 </ul> 
             </div>
 
-            <div class="title d-flex my-3 ellipsis ellipsis-cont">
+            <div class="title d-flex my-3 mx-2 ellipsis ellipsis-cont">
+
                 <h3>{{ apartment.title }}</h3>
 
             </div>
@@ -65,9 +68,9 @@ export default{
     
         .cards-list {
             position: absolute;
-            top: 0;
+            top: 15px;
             bottom: 0;
-            left: 0;
+            left: 15px;
             right: 0;
             height: 100%;
             width: 100%;

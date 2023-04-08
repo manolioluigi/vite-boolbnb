@@ -184,9 +184,9 @@ export default {
     }
 
     @media screen and (max-width:992px){
-    .responsive-md {
-        display: flex;
-        flex-direction: column;
+        .responsive-md {
+            display: flex;
+            flex-direction: column;
+        }
     }
-}
 </style>
