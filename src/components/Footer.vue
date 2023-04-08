@@ -8,10 +8,10 @@ export default {
         <footer>
             <div class="container py-2">
                 <div class="row d-flex align-items-center media">
-                    <div class="col-4 d-none d-md-block d-flex text-center">
+                    <div class="col-4 d-none d-lg-block d-flex text-center">
                         <img src="../../public/img/airbnb-removebg.png" width="50" alt="log-sm">
                     </div>
-                    <div class="col-4 d-none d-md-block">
+                    <div class="col-4 d-none d-lg-block">
                         <h6 class="text-white">Copyright © 2023 BoolBnB Inc. All rights reserved</h6>
                     </div>
                     <div class="col-lg-4 col-sm-12 d-block d-flex justify-content-center">
@@ -52,7 +52,7 @@ export default {
             }
         }
 
-        @media screen and (max-width: 576px){
+        @media screen and (min-width: 400px) and (max-width: 992px){
             .media{
                 display: flex;
                 justify-content: center;
