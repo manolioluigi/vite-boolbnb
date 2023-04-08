@@ -112,7 +112,7 @@ export default {
                             </div>
                         </div>
                         <div class="row d-flex justify-content-between my-2">
-                            <div class="col-7">
+                            <div class="col-sm-6 col-md-6 col-lg-7">
                                 <div>
                                     <h3 class="mb-4">Description</h3>
                                 </div>
@@ -120,7 +120,7 @@ export default {
                                     <p class="mb-3">{{ apartment.description }}</p>
                                 </div>
                                 <div>
-                                    <ul class="list-unstyled d-flex">
+                                    <ul class="list-unstyled d-flex responsive-md">
                                         <li class="me-4"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
                                         <li class="me-4"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
                                         <li class="me-4"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
@@ -131,12 +131,12 @@ export default {
                                     <h3 class="my-4">Optionals</h3>
                                 </div>
                                 <div>
-                                    <ul class="list-unstyled d-flex">
+                                    <ul class="list-unstyled d-flex responsive-md">
                                         <li  v-for="optional in apartment.optionals" :key="optional.id" class="me-4"><i :class="optional.icon" class="me-1"></i><span class="me-3">{{ optional.name }}</span></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div>
                                     <h3 class="mb-4">Contact host</h3>
                                 </div>
@@ -166,7 +166,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.bg-pink{
+    .bg-pink{
         background: rgb(237,130,172);
         background: linear-gradient(0deg, rgba(237,130,172,1) 15%, rgba(255,255,255,1) 50%);
     }
@@ -182,4 +182,11 @@ export default {
     .cover-img{
         width: 300px;
     }
+
+    @media screen and (max-width:992px){
+    .responsive-md {
+        display: flex;
+        flex-direction: column;
+    }
+}
 </style>
