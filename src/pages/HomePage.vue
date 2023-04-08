@@ -56,7 +56,7 @@
                  <div v-else class="col-12">
                     <div class="row filtered-data-container">
                         <div v-if="!store.filterFlag" class="d-flex flex-wrap" >
-                            <div class="col-12 col-md-6 col-lg-4 my-5 d-flex flex-wrap justify-content-center" v-for="apartment in apartments" :key="apartment.id">
+                            <div class="col-12 col-lg-6 col-xl-4 my-5 d-flex flex-wrap justify-content-center" v-for="apartment in apartments" :key="apartment.id">
                                 <ApartmentCard :apartment="apartment"></ApartmentCard>
                             </div>
                         </div>
