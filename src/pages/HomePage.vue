@@ -48,7 +48,7 @@
          <div>
              <Jumbotron :jumbotron="jumbotron"></Jumbotron>
          </div>
-         <div class="container-fluid">
+         <div class="container">
              <div class="row">
                  <div v-if="loading" class="col-12 ">
                      <div class="my-5 loader"></div> 
