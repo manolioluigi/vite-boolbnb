@@ -40,6 +40,7 @@ export default {
 </script>
 
 <template>
+  <div class="bg-pink">
     <div class="card-group">
         <div class="card m-2 d-flex justify-content-center bg-dark text-white" v-for="(person, index) in people" :key="index">
             <div class="my-card">
@@ -51,13 +52,16 @@ export default {
             </div>
         </div>
     </div>
+  </div>
 </template>  
 
 <style lang="scss" scoped>
     @use '../styles/generals.scss' as *;
-
+    .bg-pink{
+        background: rgb(237,130,172);
+        background: linear-gradient(0deg, rgba(237,130,172,1) 15%, rgba(255,255,255,1) 50%);
+    }
     .my-card{
-        width: 300px;
         height: 300px;
         border-radius: 15px;
         margin: 10px auto;
@@ -67,7 +71,6 @@ export default {
             width: 100%;
             height: 100%;
             object-position: top;
-            
         }
     }
 </style>
