@@ -9,7 +9,9 @@ export default {
             <div class="container py-2">
                 <div class="row d-flex align-items-center media">
                     <div class="col-4 d-none d-lg-block d-flex text-center">
-                        <img src="../../public/img/airbnb-removebg.png" width="50" alt="log-sm">
+                        <router-link class="navbar-brand" :to="{ name: 'homepage'}">
+                            <img src="../../public/img/airbnb-removebg.png" width="50" alt="log-sm">
+                        </router-link>
                     </div>
                     <div class="col-4 d-none d-lg-block">
                         <h6 class="text-white">Copyright © 2023 BoolBnB Inc. All rights reserved</h6>

@@ -97,11 +97,11 @@ export default {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 mt-2">
                                 <h2>{{ apartment.title }}</h2>
                             </div>
-                            <div class="col-12">
-                                <h5>{{ apartment.address }}</h5>
+                            <div class="col-12 mt-3">
+                                <h6 class="text-secondary">{{ apartment.address }}</h6>
                             </div>
                         </div>
                         <div class="row">
@@ -111,20 +111,20 @@ export default {
                                 </div>
                             </div>
                         </div>
-                        <div class="row d-flex justify-content-between my-2">
+                        <div class="row d-flex justify-content-between my-3">
                             <div class="col-sm-6 col-md-6 col-lg-7">
                                 <div>
                                     <h3 class="mb-4">Description</h3>
                                 </div>
                                 <div>
-                                    <p class="mb-3">{{ apartment.description }}</p>
+                                    <p class="mb-3 text-secondary">{{ apartment.description }}</p>
                                 </div>
                                 <div>
                                     <ul class="list-unstyled d-flex responsive-md">
-                                        <li class="me-4"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
-                                        <li class="me-4"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
-                                        <li class="me-4"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
-                                        <li class="me-4"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
+                                        <li class="me-4 text-secondary"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
+                                        <li class="me-4 text-secondary"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
+                                        <li class="me-4 text-secondary"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
+                                        <li class="me-4 text-secondary"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
                                     </ul>
                                 </div>
                                 <div>
@@ -132,7 +132,7 @@ export default {
                                 </div>
                                 <div>
                                     <ul class="list-unstyled d-flex responsive-md">
-                                        <li  v-for="optional in apartment.optionals" :key="optional.id" class="me-4"><i :class="optional.icon" class="me-1"></i><span class="me-3">{{ optional.name }}</span></li>
+                                        <li  v-for="optional in apartment.optionals" :key="optional.id" class="me-4 text-secondary"><i :class="optional.icon" class="me-1"></i><span class="me-3">{{ optional.name }}</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -142,13 +142,13 @@ export default {
                                 </div>
                                 <form>
                                     <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                        <label for="exampleFormControlInput1" class="form-label text-secondary">Email address</label>
                                         <input v-model="user_mail" type="email" name="user_mail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                         <p class="text-danger">{{errorEmail}}</p>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                                        <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8"></textarea>
+                                        <label for="exampleFormControlTextarea1" class="form-label text-secondary">Example textarea</label>
+                                        <textarea v-model="message" class="form-control" name="message" id="exampleFormControlTextarea1" rows="8" placeholder="Text"></textarea>
                                         <p class="text-danger">{{errorMessage}}</p>
                                     </div>
                                     <button type="submit" class="btn btn-pink" @click.prevent="submitMessage(apartment.id)" value="Send">Send</button>

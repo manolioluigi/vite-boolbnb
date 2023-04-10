@@ -16,23 +16,22 @@ export default{
     <div class="col-12 col-lg-6 col-xl-4 my-5 d-flex flex-wrap justify-content-center" v-for="apartment in store.filteredApartments" :key="apartment.id">
         <router-link :to="{ name: 'single_apartment', params: { slug: apartment.slug }}" class="link-apartment" target="_blank">
             <div class="cards" id="cards-search">
-            <img class="cards-img" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/300'" :alt="apartment.title">
-            <span v-if="apartment.sponsorship_id"><i class="fas fa-medal spons-badge"></i></span>
-            <div class="cards-list">
-                <ul class="list-unstyled d-flex flex-column">
-                    <li class="me-4 pb-2"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
-                    <li class="me-4 pb-2"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
-                    <li class="me-4 pb-2"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
-                    <li class="me-4 pb-2"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
-                </ul> 
+                <img class="cards-img" :src="apartment.cover_img != null ? `${store.baseUrl}/storage/${apartment.cover_img}` : 'https://picsum.photos/400/300'" :alt="apartment.title">
+                <span v-if="apartment.sponsorship_id"><i class="fas fa-medal spons-badge"></i></span>
+                <div class="cards-list">
+                    <ul class="list-unstyled d-flex flex-column">
+                        <li class="me-4 pb-2"><i class="me-1 fas fa-door-closed"></i><span>{{apartment.room_n}} Local</span></li>
+                        <li class="me-4 pb-2"><i class="me-1 fas fa-bed"></i><span>{{apartment.bed_n}} Bed</span></li>
+                        <li class="me-4 pb-2"><i class="me-1 fas fa-shower"></i><span>{{apartment.bath_n}} Bath</span></li>
+                        <li class="me-4 pb-2"><i class="me-1 fas fa-house-chimney"></i><span>{{apartment.square_meters}} Square Meters</span></li>
+                    </ul> 
+                </div>
+                <div class="title d-flex my-3 mx-2 ellipsis ellipsis-cont">
+                    <h3>{{ apartment.title }}</h3>
+                </div>
             </div>
-            <div class="title d-flex my-3 mx-2 ellipsis ellipsis-cont">
-                <h3>{{ apartment.title }}</h3>
-            </div>
-        </div>
-    </router-link>
+        </router-link>
     </div>
-
 
 </template>
 

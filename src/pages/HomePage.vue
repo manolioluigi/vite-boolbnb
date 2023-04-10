@@ -86,7 +86,6 @@
 </template>
 
 <style lang="scss" scoped>
-
     .bg-pink{
         background: rgb(237,130,172);
         background: linear-gradient(0deg, rgba(237,130,172,1) 15%, rgba(255,255,255,1) 50%);

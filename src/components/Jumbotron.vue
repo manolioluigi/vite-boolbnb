@@ -125,7 +125,7 @@ export default {
                                     </div>
                                     <div class="d-flex my-4">
                                         <div class="me-4">
-                                            <h4 class="mb-3">Room Number</h4>
+                                            <h5 class="mb-3">Room Number</h5>
                                             <select name="" id="" v-model="filterData.room_n">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -136,7 +136,7 @@ export default {
                                             </select>
                                         </div>
                                         <div>
-                                            <h4 class="mb-3">Bed Number</h4>
+                                            <h5 class="mb-3">Bed Number</h5>
                                             <select name="" id="" v-model="filterData.bed_n">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -148,7 +148,7 @@ export default {
                                         </div>
                                     </div>
                                     <div>
-                                        <h4>Kilometers</h4>
+                                        <h5>Kilometers</h5>
                                         <div id="form-wrapper">
                                             <form action="/p/quote.php" method="GET">
                                                 <div id="debt-amount-slider">
@@ -168,35 +168,35 @@ export default {
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 class="mb-3">Optionals</h4>
-                                        <label class="container-check">Garden
+                                        <h5 class="mb-3">Optionals</h5>
+                                        <label class="container-check text-secondary fs-5">Garden
                                             <input type="checkbox" v-model="filterData.optionals" checked="checked" value="Garden">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container-check">Wifi
+                                        <label class="container-check text-secondary fs-5">Wifi
                                             <input type="checkbox" v-model="filterData.optionals" value="WiFi">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container-check">Car Space
+                                        <label class="container-check text-secondary fs-5">Car Space
                                             <input type="checkbox" v-model="filterData.optionals" value="Car Space">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container-check">Kitchen
+                                        <label class="container-check text-secondary fs-5">Kitchen
                                             <input type="checkbox" v-model="filterData.optionals" value="Kitchen">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container-check">Sea View
+                                        <label class="container-check text-secondary fs-5">Sea View
                                             <input type="checkbox" v-model="filterData.optionals" value="Sea View">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container-check">Pool
+                                        <label class="container-check text-secondary fs-5">Pool
                                             <input type="checkbox" v-model="filterData.optionals" value="Pool">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="my-3">
-                                    <button class="cssbuttons-io-button" type="button" @click="this.submitData" data-bs-dismiss="offcanvas" aria-label="Close"> Search
+                                <div class="mt-4">
+                                    <button class="cssbuttons-io-button" type="button" @click="this.submitData" data-bs-dismiss="offcanvas" aria-label="Close">Search
                                         <div class="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
                                         </div>
