@@ -84,6 +84,11 @@ export default{
             overflow: hidden;
         }
     }
+
+    .cards:hover .title{
+            color: rgb(255, 56, 92);
+    }
+    
     .cards:hover .cards-img {
         opacity: 0.4;
     }
